@@ -1,0 +1,27 @@
+x264
+下载x264代码
+https://www.videolan.org/developers/x264.html
+
+编译x264代码
+./configure --prefix=`pwd`/install_x264 --enable-shared --enable-static --enable-debug
+make
+make install
+
+ffmpeg
+编译ffmpeg，支持x264
+./configure --prefix=`pwd`/temp --enable-shared --enable-gpl --enable-debug --extra-cflags=-g --extra-ldflags=-L/home/chen/work/project/ffmpeg/x264/x264-master/install_x264/lib --extra-cflags=-I/home/chen/work/project/ffmpeg/x264/x264-master/install_x264/include --enable-libx264
+或
+export PKG_CONFIG_PATH=/home/chen/work/project/ffmpeg/x264/x264-master/install_x264/lib/pkgconfig:$PKG_CONFIG_PATH
+./configure --prefix=`pwd`/temp --enable-shared --enable-gpl --enable-debug --extra-cflags=-g --enable-libx264
+
+make
+make install
+
+doc/examples编译
+make examples
+
+添加运行环境变量
+export LD_LIBRARY_PATH="/home/chen/work/project/ffmpeg/FFmpeg-1/temp/lib:/home/chen/work/project/ffmpeg/x264/x264-master/install_x264/lib:$LD_LIBRARY_PATH"
+cd doc/examples
+执行./encode_video test.h264 libx264
+生成test.h264文件，可播放
