@@ -12,7 +12,7 @@ ffmpeg
 ./configure --prefix=`pwd`/temp --enable-shared --enable-gpl --enable-debug --extra-cflags=-g --extra-ldflags=-L/home/chen/work/project/ffmpeg/x264/x264-master/install_x264/lib --extra-cflags=-I/home/chen/work/project/ffmpeg/x264/x264-master/install_x264/include --enable-libx264
 或
 export PKG_CONFIG_PATH=/home/chen/work/project/ffmpeg/x264/x264-master/install_x264/lib/pkgconfig:$PKG_CONFIG_PATH
-./configure --prefix=`pwd`/temp --enable-shared --enable-gpl --enable-debug --extra-cflags=-g --enable-libx264
+./configure --prefix=`pwd`/temp --enable-shared --enable-gpl --enable-debug --extra-cflags=-g --disable-optimizations --disable-asm --disable-stripping --enable-doc --enable-libx264
 
 make
 make install
