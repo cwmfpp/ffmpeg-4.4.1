@@ -815,6 +815,7 @@ extern AVCodec ff_mjpeg_cuvid_decoder;
 extern AVCodec ff_mjpeg_qsv_encoder;
 extern AVCodec ff_mjpeg_qsv_decoder;
 extern AVCodec ff_mjpeg_vaapi_encoder;
+extern AVCodec ff_mjpeg_hjkenc_encoder;
 extern AVCodec ff_mp3_mf_encoder;
 extern AVCodec ff_mpeg1_cuvid_decoder;
 extern AVCodec ff_mpeg2_cuvid_decoder;
